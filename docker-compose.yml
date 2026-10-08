@@ -25,6 +25,7 @@ services:
       - platform
       - cn01-stego
       - cn02-webapp
+      - cn04-forensics
 
   platform:
     build:
@@ -50,6 +51,14 @@ services:
     build:
       context: ./challenges/cn02-webapp
     container_name: ciphernest-cn02-webapp
+    restart: unless-stopped
+    networks:
+      - ctf-challnet
+
+  cn04-forensics:
+    build:
+      context: ./challenges/cn04-forensics
+    container_name: ciphernest-cn04-forensics
     restart: unless-stopped
     networks:
       - ctf-challnet

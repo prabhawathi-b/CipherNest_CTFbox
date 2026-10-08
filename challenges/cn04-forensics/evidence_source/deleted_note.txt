@@ -1,0 +1,6 @@
+This note was in the recycle bin before the portal migration.
+
+Internal host for the next phase of the investigation:
+  10.20.30.40
+
+Stage 4 Flag: CipherNest{d3l3t3d_but_n0t_g0n3}
