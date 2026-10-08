@@ -17,6 +17,7 @@ services:
       - "8080:80"
     volumes:
       - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./challenges/cn03-crypto:/usr/share/nginx/cn03:ro
     networks:
       - ctf-frontnet
       - ctf-challnet

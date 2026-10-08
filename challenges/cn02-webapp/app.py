@@ -12,7 +12,7 @@ Maintenance Notes - Staff Portal (Legacy)
 Scheduled decommission was postponed again. Config backup stored below
 uses the old encoding scheme (legacy, not real encryption):
 
-Encoded config: Q2lwaGVyTmVzdHtiMDBsM2FuXzFuajNjdDEwbl9tNHN0M3J9
+Encoded config: UG1oYXJ2RnhmeHtuMXphM3YzX3VrbHRsMF92ZWV1ZDNlfTo6ZWp2dW1ueF9od3drOk52N2F5bmdsX09ueTFsOQ==
 
 Keyword used by the ops team for this quarter's backups: NEST
 
