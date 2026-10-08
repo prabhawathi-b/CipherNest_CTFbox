@@ -1,4 +1,4 @@
-﻿version: "3.9"
+version: "3.9"
 
 networks:
   ctf-frontnet:
@@ -23,6 +23,7 @@ services:
     depends_on:
       - platform
       - cn01-stego
+      - cn02-webapp
 
   platform:
     build:
@@ -40,6 +41,14 @@ services:
     build:
       context: ./challenges/cn01-stego
     container_name: ciphernest-cn01-stego
+    restart: unless-stopped
+    networks:
+      - ctf-challnet
+
+  cn02-webapp:
+    build:
+      context: ./challenges/cn02-webapp
+    container_name: ciphernest-cn02-webapp
     restart: unless-stopped
     networks:
       - ctf-challnet
