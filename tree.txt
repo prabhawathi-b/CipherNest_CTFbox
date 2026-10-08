@@ -1,0 +1,91 @@
+﻿Folder PATH listing
+Volume serial number is 4003-A67B
+C:.
+|   .env
+|   .env.example
+|   .gitignore
+|   carve_test.py
+|   check_pcap.py
+|   cookies.txt
+|   docker-compose.yml
+|   evidence.bin
+|   evidence_capture.pcap
+|   flag_cn05.txt
+|   README.md
+|   tree.txt
+|   
++---challenges
+|   +---cn01-stego
+|   |   |   Dockerfile
+|   |   |   embed_secret.py
+|   |   |   generate_banner.py
+|   |   |   nginx-cn01.conf
+|   |   |   secret.txt
+|   |   |   
+|   |   \---html
+|   |           index.html
+|   |           
+|   +---cn02-webapp
+|   |   |   app.py
+|   |   |   Dockerfile
+|   |   |   init_db.py
+|   |   |   requirements.txt
+|   |   |   
+|   |   +---app
+|   |   +---seed
+|   |   \---templates
+|   |           login.html
+|   |           maintenance.html
+|   |           
+|   +---cn03-crypto
+|   |   |   challenge.txt
+|   |   |   
+|   |   \---seed
+|   +---cn04-forensics
+|   |   |   Dockerfile
+|   |   |   nginx-cn04.conf
+|   |   |   
+|   |   +---evidence
+|   |   \---evidence_source
+|   |           access.log
+|   |           build_evidence.py
+|   |           deleted_note.txt
+|   |           system.log
+|   |           
+|   +---cn05-network
+|   |   +---capture
+|   |   |       Dockerfile
+|   |   |       generate_pcap.py
+|   |   |       nginx-cn05.conf
+|   |   |       
+|   |   +---pcaps
+|   |   \---target
+|   |           Dockerfile
+|   |           flag.txt
+|   |           ftp_server.py
+|   |           
+|   \---cn06-profile
+|       \---web
++---database
++---docs
+|       design-changes.md
+|       
++---flag-validator
+|   \---app
++---nginx
+|       nginx.conf
+|       
++---platform
+|   |   Dockerfile
+|   |   requirements.txt
+|   |   
+|   \---app
+|           app.py
+|           
++---scripts
+|   \---validation
++---solvers
+|       cn03_solver.py
+|       cn04_solver.py
+|       
+\---tests
