@@ -26,6 +26,7 @@ services:
       - cn01-stego
       - cn02-webapp
       - cn04-forensics
+      - cn05-capture
 
   platform:
     build:
@@ -59,6 +60,26 @@ services:
     build:
       context: ./challenges/cn04-forensics
     container_name: ciphernest-cn04-forensics
+    restart: unless-stopped
+    networks:
+      - ctf-challnet
+
+  cn05-target:
+    build:
+      context: ./challenges/cn05-network/target
+    container_name: ciphernest-cn05-target
+    restart: unless-stopped
+    ports:
+      - "2221:21"
+      - "2121-2130:2121-2130"
+    networks:
+      - ctf-challnet
+      - ctf-frontnet
+
+  cn05-capture:
+    build:
+      context: ./challenges/cn05-network/capture
+    container_name: ciphernest-cn05-capture
     restart: unless-stopped
     networks:
       - ctf-challnet
