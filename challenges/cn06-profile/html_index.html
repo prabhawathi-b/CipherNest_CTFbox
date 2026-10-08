@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head><title>CeylonGov Secure - Staff Directory</title></head>
+<body style="font-family: sans-serif; max-width: 650px; margin: 40px auto;">
+  <h1>CN-06 &mdash; The Nest Revealed</h1>
+  <p><em>Domain: OSINT / Reconnaissance | Difficulty: Hard / Capstone</em></p>
+
+  <hr>
+  <h2>Staff Profile: J. Fernando</h2>
+  <p><strong>Role:</strong> Senior Systems Administrator, Staging Environment</p>
+  <p><strong>Years of service:</strong> 6</p>
+  <p><strong>Favourite quote:</strong> "Quoth the Raven, patch it nevermore."</p>
+  <p><strong>Security question hint:</strong> My favourite bird opens every door I lock.</p>
+
+  <hr>
+  <h3>Final Reconstruction</h3>
+  <p>You have recovered five fragments across the investigation. To prove
+  the full intrusion path, combine them using this rule:</p>
+  <ol>
+    <li>Take the <strong>3rd character</strong> of each flag's inner content
+        (the part inside the braces), in stage order (CN-01 through CN-05).</li>
+    <li>Concatenate those five characters into one string.</li>
+    <li>Apply a Caesar cipher to that string, shifting each letter by the
+        corresponding letter position of the key named in my favourite
+        quote above (digits are left unchanged).</li>
+    <li>Wrap the result as CipherNest{...} - that is the final flag.</li>
+  </ol>
+
+  <p style="color:#888;">Example (illustrative only, not the real key):
+  if the key were "ABC" and your combined string were "xyz", you would
+  shift 'x' by 0 (A), 'y' by 1 (B), 'z' by 2 (C), repeating the key as
+  needed for longer strings.</p>
+</body>
+</html>

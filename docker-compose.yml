@@ -27,6 +27,7 @@ services:
       - cn02-webapp
       - cn04-forensics
       - cn05-capture
+      - cn06-profile
 
   platform:
     build:
@@ -80,6 +81,14 @@ services:
     build:
       context: ./challenges/cn05-network/capture
     container_name: ciphernest-cn05-capture
+    restart: unless-stopped
+    networks:
+      - ctf-challnet
+
+  cn06-profile:
+    build:
+      context: ./challenges/cn06-profile
+    container_name: ciphernest-cn06-profile
     restart: unless-stopped
     networks:
       - ctf-challnet
