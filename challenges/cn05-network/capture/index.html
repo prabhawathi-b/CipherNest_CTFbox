@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>CN-05 - CipherNest</title><link rel="stylesheet" href="/static/ciphernest.css"></head>
+<body><header class="nav"><a class="logo" href="/">CIPHERNEST</a><nav><a href="/dashboard">Dashboard</a></nav></header>
+<main class="pg">
+<a class="crumb" href="/dashboard">&larr; Back to challenges</a>
+<h1>CN-05: Whispers on the Wire</h1>
+<div class="chips"><span class="chip">Networking</span><span class="chip">Moderate-Hard</span></div>
+<p>The host found in CN-04 sits in CeylonGov Secure's internal service segment. Investigators have a packet capture from that segment. Recover the intruder's credentials from it, then use them against the live service on the staging host.</p>
+<h2>Evidence</h2>
+<div class="card file"><div><b>evidence_capture.pcap</b><small>Packet capture, open in Wireshark</small></div><a class="btn btn-p btn-s" href="/cn05-capture/evidence_capture.pcap" download>Download</a></div>
+<h2>Hints</h2>
+<details class="hint"><summary>Hint 1</summary><p>Scan the host for open ports to find where the service lives.</p></details>
+<details class="hint"><summary>Hint 2</summary><p>FTP sends credentials in the clear. Wireshark's Follow TCP Stream shows exactly what was typed.</p></details>
+<details class="hint"><summary>Hint 3</summary><p>Filter on ftp before you start scrolling through the capture.</p></details>
+<p class="note">Found the flag? Submit it on the <a href="/dashboard">dashboard</a>. The file you retrieve points to CN-06.</p>
+</main></body></html>

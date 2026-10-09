@@ -10,6 +10,7 @@ UG1oYXJ2RnhmeHtuMXphM3YzX3VrbHRsMF92ZWV1ZDNlfTo6ZWp2dW1ueF9od3drOk52N2F5bmdsX09u
 Hints:
 1. Base64 will get you readable characters, but not a readable answer.
 2. The letter patterns suggest a classical cipher, not modern encryption.
-3. The key was hiding in plain sight in CN-02's maintenance notes (NEST).
+3. The key was hiding in plain sight in CN-02's maintenance notes.
 
 Decode this to recover the Stage 3 flag and credentials for CN-04.
+

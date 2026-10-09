@@ -16,3 +16,5 @@ RUN chown -R nginx:nginx /usr/share/nginx/html /var/cache/nginx /etc/nginx/conf.
 
 USER nginx
 EXPOSE 8085
+
+COPY index.html /usr/share/nginx/html/index.html

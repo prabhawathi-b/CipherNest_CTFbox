@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>CN-04 - CipherNest</title><link rel="stylesheet" href="/static/ciphernest.css"></head>
+<body><header class="nav"><a class="logo" href="/">CIPHERNEST</a><nav><a href="/dashboard">Dashboard</a></nav></header>
+<main class="pg">
+<a class="crumb" href="/dashboard">&larr; Back to challenges</a>
+<h1>CN-04: Buried Logs</h1>
+<div class="chips"><span class="chip">Digital Forensics</span><span class="chip">Moderate</span></div>
+<p>The credentials from CN-03 unlocked this evidence archive. It holds a snapshot captured from the compromised staging server. Work out which internal host the intruder moved to next.</p>
+<h2>Evidence</h2>
+<div class="card file"><div><b>staging_evidence.bin</b><small>Binary evidence package</small></div><a class="btn btn-p btn-s" href="/cn04/staging_evidence.bin" download>Download</a></div>
+<h2>Hints</h2>
+<details class="hint"><summary>Hint 1</summary><p>Logs tell you when something happened. Deleted files tell you what actually happened.</p></details>
+<details class="hint"><summary>Hint 2</summary><p>Not everything in a file shows up when you simply read it. Look at the raw bytes.</p></details>
+<details class="hint"><summary>Hint 3</summary><p>Cross-reference timestamps between the two intact logs before you start carving.</p></details>
+<p class="note">Found the flag? Submit it on the <a href="/dashboard">dashboard</a>. Note the internal host for CN-05.</p>
+</main></body></html>

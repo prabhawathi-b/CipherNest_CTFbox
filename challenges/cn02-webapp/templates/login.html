@@ -1,16 +1,16 @@
-<!DOCTYPE html>
-<html>
-<head><title>CeylonGov Secure - Staff Portal</title></head>
-<body style="font-family: sans-serif; max-width: 500px; margin: 60px auto;">
-  <h2>CeylonGov Secure - Legacy Staff Portal</h2>
-  <p style="color: #888;">This portal is scheduled for decommission.</p>
-  {% if error %}
-    <p style="color: red;">{{ error }}</p>
-  {% endif %}
-  <form method="POST">
-    <p>Username: <input type="text" name="username"></p>
-    <p>Password: <input type="password" name="password"></p>
-    <button type="submit">Log In</button>
-  </form>
-</body>
-</html>
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Staff Portal - CipherNest</title><link rel="stylesheet" href="/static/ciphernest.css"></head>
+<body><header class="nav"><a class="logo" href="/">CIPHERNEST</a><nav><a href="/dashboard">Dashboard</a></nav></header>
+<main class="pg">
+<div class="auth"><div class="card legacy">
+<h1>CeylonGov Secure Staff Portal</h1>
+<p class="sub">Legacy system. Scheduled for decommission.</p>
+{% if error %}<div class="err" role="alert">{{ error }}</div>{% endif %}
+<form method="POST">
+<label class="field"><span>Username</span><div class="inp"><input type="text" name="username" autocomplete="off"></div></label>
+<label class="field"><span>Password</span><div class="inp"><input type="password" name="password"></div></label>
+<button class="btn btn-p" style="width:100%" type="submit">Log in</button>
+</form>
+<p class="alt"><a href="/dashboard">Back to CipherNest dashboard</a></p>
+</div></div>
+</main></body></html>

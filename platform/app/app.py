@@ -18,7 +18,7 @@ FLAG_HASHES = {
 STAGES = [
     {"id": "CN01", "title": "Frame of Reference", "domain": "Steganography", "diff": "Easy", "link": "/cn01/", "label": "Open briefing"},
     {"id": "CN02", "title": "Back Door Left Ajar", "domain": "Web Security", "diff": "Easy", "link": "/cn02/", "label": "Open portal"},
-    {"id": "CN03", "title": "Weak Locks", "domain": "Cryptography", "diff": "Moderate", "link": "/cn03/challenge.txt", "label": "Open artifact"},
+    {"id": "CN03", "title": "Weak Locks", "domain": "Cryptography", "diff": "Moderate", "link": "/cn03/", "label": "Open artifact"},
     {"id": "CN04", "title": "Buried Logs", "domain": "Digital Forensics", "diff": "Moderate", "link": "/cn04/", "label": "Open archive"},
     {"id": "CN05", "title": "Whispers on the Wire", "domain": "Networking", "diff": "Moderate-Hard", "link": "/cn05-capture/", "label": "Open capture"},
     {"id": "CN06", "title": "The Nest Revealed", "domain": "OSINT / Capstone", "diff": "Hard", "link": "/cn06/", "label": "Open profile"},
@@ -215,3 +215,4 @@ init_db()
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)
+
