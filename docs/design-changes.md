@@ -21,3 +21,6 @@ The implementation follows the approved Assignment 01 design: six stages, the sa
 - SSH decoy service in CN-05 (see row 5).
 - Per-participant network gating for CN-05 (see row 4).
 - Enforcement of stage order. The dashboard recommends an order only.
+
+- Container resource limits (CPU/RAM) from the A1 risk register were not implemented.
+- read_only filesystem plus tmpfs mounts for CN-01, CN-04, CN-05 capture and CN-06 (A1 deployment step 11) were not implemented.

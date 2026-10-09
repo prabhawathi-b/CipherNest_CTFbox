@@ -67,7 +67,7 @@ The platform stores only SHA-256 hashes of the six flags, never the plaintext. A
 
 - Challenge containers sit on an internal Docker network with no internet route.
 - Only port 8080 and the CN-05 FTP ports are published on the host.
-- Every container runs as a non-root user except cn05-target. FTP must bind port 21, which needs root. This is the one documented exception.
+- Every container's application process runs as a non-root user except cn05-target (FTP must bind port 21, which needs root). The stock nginx:alpine image used by the reverse proxy and several challenge containers always starts its master process as root by design (standard upstream nginx behaviour); the worker processes that actually handle requests run as the nginx user, and custom-built images additionally run as nginx or a dedicated non-root user at the application layer.
 - Flags and credentials are not exposed in public pages or client-side code.
 
 ## Reset and recovery
@@ -114,3 +114,4 @@ Challenge-generation scripts live next to each challenge, for example challenges
 Docker and Docker Compose, Nginx, Python 3.12, Flask, Werkzeug, gunicorn, SQLite, Pillow (CN-01 image generation and LSB embedding), Scapy (CN-05 PCAP generation and solver), pyftpdlib (CN-05 FTP service), Apache htpasswd utility (CN-04 credentials). Participant tools referenced by hints: Wireshark, CyberChef, Python, a PNG/steganography library.
 
 AI assistance: generative AI assistants were used while building the project (drafting, debugging and review of code and documents). The group reviewed and tested the result. No AI tool was used while recording the demonstration video.
+
