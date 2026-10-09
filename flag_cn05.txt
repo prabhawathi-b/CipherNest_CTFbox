@@ -1,8 +1,0 @@
-CeylonGov Secure - Internal Network Segment
----------------------------------------------
-You have reached the internal service VLAN. This confirms the
-intrusion path described in the staging server logs.
-
-Employee profile reference for the final phase: j.fernando-profile
-
-Stage 5 Flag: CipherNest{ftp_sn1ff3d_1n_th3_cl34r}
