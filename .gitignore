@@ -27,3 +27,7 @@ Thumbs.db
 
 # Docker
 *.log
+
+cookies.txt
+evidence.bin
+flag_cn05.txt
