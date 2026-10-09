@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% set reg = mode == 'register' %}
+{% block title %}{{ 'Create account' if reg else 'Login' }} - CipherNest{% endblock %}
+{% block main %}
+<section class="auth">
+  <div class="card">
+    <h1>{{ 'Create your account' if reg else 'Sign in to continue' }}</h1>
+    <p class="sub">{{ 'Pick a callsign. It appears on your dashboard.' if reg else 'Welcome back, investigator.' }}</p>
+    {% if error %}<div class="err" role="alert">{{ error }}</div>{% endif %}
+    <form method="post" id="af" novalidate>
+      <label class="field"><span>Callsign</span>
+        <div class="inp"><input name="username" autocomplete="username" required minlength="3" maxlength="20" pattern="[A-Za-z0-9_]+" autofocus></div></label>
+      <label class="field"><span>Password</span>
+        <div class="inp"><input name="password" type="password" autocomplete="{{ 'new-password' if reg else 'current-password' }}" required minlength="{{ 8 if reg else 1 }}"><button type="button" class="tg" aria-label="Show password">Show</button></div></label>
+      {% if reg %}<label class="field"><span>Confirm password</span>
+        <div class="inp"><input name="confirm" type="password" autocomplete="new-password" required minlength="8"></div></label>{% endif %}
+      <button class="btn btn-p" style="width:100%" id="sb">{{ 'Create account' if reg else 'Login' }}</button>
+    </form>
+    <p class="alt">{% if reg %}Already registered? <a href="/login">Login</a>{% else %}New here? <a href="/register">Create an account</a>{% endif %}</p>
+  </div>
+</section>
+<script>
+document.querySelectorAll('.tg').forEach(b=>b.addEventListener('click',()=>{
+  const i=b.previousElementSibling,s=i.type==='password';
+  i.type=s?'text':'password';b.textContent=s?'Hide':'Show';b.setAttribute('aria-label',(s?'Hide':'Show')+' password');}));
+document.getElementById('af').addEventListener('submit',e=>{
+  const f=e.target;
+  if(!f.checkValidity()){e.preventDefault();f.reportValidity();return;}
+  const b=document.getElementById('sb');b.disabled=true;b.textContent='Please wait...';});
+</script>
+{% endblock %}

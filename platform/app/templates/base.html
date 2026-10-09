@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{% block title %}CipherNest{% endblock %}</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='ciphernest.css') }}">
+</head>
+<body>
+{% block body %}
+<header class="nav">
+  <a class="logo" href="/">{% include '_logo.html' %}CIPHERNEST</a>
+  <nav aria-label="Main">
+    <a href="/" {% if request.path == '/' %}class="on"{% endif %}>Home</a>
+    <a href="/dashboard" {% if request.path == '/dashboard' %}class="on"{% endif %}>Challenges</a>
+    {% if user %}<a class="btn btn-g btn-s" href="/dashboard">Dashboard</a>
+    {% else %}<a class="btn btn-g btn-s" href="/login">Login</a>{% endif %}
+  </nav>
+</header>
+<main>{% block main %}{% endblock %}</main>
+{% endblock %}
+</body>
+</html>

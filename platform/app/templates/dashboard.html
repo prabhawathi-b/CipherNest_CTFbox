@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% block title %}Dashboard - CipherNest{% endblock %}
+{% block body %}
+<div class="shell">
+  <aside class="side">
+    <a class="logo" href="/">{% include '_logo.html' %}CIPHERNEST</a>
+    <p class="me">Signed in as <b>{{ user.username }}</b></p>
+    <a class="on" href="/dashboard">Dashboard</a>
+    <a href="#challenges">Challenges</a>
+    <form class="out" method="post" action="/logout"><button class="btn btn-g btn-s" style="width:100%">Log out</button></form>
+  </aside>
+  <main class="main">
+    <section class="card welcome">
+      <div>
+        <h1>Welcome back, {{ user.username }}</h1>
+        <p>{% if nxt %}Your next fragment is <strong>{{ nxt }}</strong>. Solve the stages in order to rebuild the intrusion path.{% else %}All six fragments recovered. The intrusion path is reconstructed.{% endif %}</p>
+      </div>
+      <div class="ring" style="--p:{{ pct }}" role="img" aria-label="{{ done|length }} of 6 challenges solved"><b>{{ done|length }}/6</b></div>
+    </section>
+    <section class="grid" id="challenges" aria-label="Challenges">
+      {% for s in stages %}
+      {% set st = 'solved' if s.id in done else ('next' if s.id == nxt else 'open') %}
+      <article class="card stage {{ st }}">
+        <div class="top"><span class="sid">{{ s.id[:2] }}-{{ s.id[2:] }}</span><span class="badge">{{ {'solved':'Solved','next':'Next','open':'Open'}[st] }}</span></div>
+        <h3>{{ s.title }}</h3>
+        <p class="meta">{{ s.domain }} &middot; {{ s.diff }}</p>
+        <div class="row">
+          <a class="btn btn-g btn-s" href="{{ s.link }}" target="_blank" rel="noopener">{{ s.label }}</a>
+          {% if st != 'solved' %}
+          <form class="flag-form" data-stage="{{ s.id }}">
+            <input aria-label="Flag for {{ s.id }}" placeholder="CipherNest{...}" autocomplete="off" required>
+            <button class="btn btn-p btn-s">Submit flag</button>
+          </form>
+          {% endif %}
+        </div>
+        <p class="msg" role="status" aria-live="polite">{% if st == 'solved' %}Fragment verified.{% endif %}</p>
+      </article>
+      {% endfor %}
+    </section>
+  </main>
+</div>
+<script>
+document.querySelectorAll('.flag-form').forEach(f=>f.addEventListener('submit',async e=>{
+  e.preventDefault();
+  const b=f.querySelector('button'),i=f.querySelector('input'),r=f.closest('.stage').querySelector('.msg');
+  b.disabled=true;r.className='msg';r.textContent='Validating...';
+  try{
+    const x=await fetch('/api/submit',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({stage:f.dataset.stage,flag:i.value.trim()})});
+    const d=await x.json();
+    if(d.correct){r.className='msg ok';r.textContent='Fragment verified.';setTimeout(()=>location.reload(),900);}
+    else{r.className='msg bad';r.textContent=d.message||'Incorrect flag.';b.disabled=false;}
+  }catch(_){r.className='msg bad';r.textContent='Validator unreachable. Try again.';b.disabled=false;}
+}));
+</script>
+{% endblock %}

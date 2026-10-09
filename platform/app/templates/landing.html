@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}CipherNest - A cyber investigation CTF{% endblock %}
+{% block main %}
+<section class="hero">
+  <div>
+    <p class="eyebrow">Investigate. Analyse. Reconstruct.</p>
+    <h1>Welcome to <span class="grad">CipherNest</span></h1>
+    <p class="lead">A simulated security incident has been detected at CeylonGov Secure, a fictional public-sector agency. You are the contracted ethical hacker. Follow the traces through six linked challenges, recover each fragment, and reconstruct how the intruder got in.</p>
+    <p><a class="btn btn-p" href="{{ '/dashboard' if user else '/register' }}">Start investigating</a></p>
+  </div>
+  <div class="art">
+    <svg viewBox="0 0 300 310" role="img" aria-label="Glowing hexagonal cipher cube"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#22D3EE"/><stop offset="1" stop-color="#A855F7"/></linearGradient><filter id="b"><feGaussianBlur stdDeviation="6"/></filter></defs>
+    <g fill="none" stroke="url(#g)" stroke-width="3">
+      <polygon points="150,20 262,85 262,215 150,280 38,215 38,85" filter="url(#b)" opacity=".7"/>
+      <polygon points="150,20 262,85 262,215 150,280 38,215 38,85"/>
+      <polygon points="150,60 228,105 228,195 150,240 72,195 72,105"/>
+      <polygon points="150,100 195,126 195,174 150,200 105,174 105,126"/>
+      <path d="M150 20v80M262 85l-67 41M38 85l67 41M150 280v-80M262 215l-67-41M38 215l67-41" stroke-width="1.5" opacity=".6"/>
+    </g>
+    <ellipse cx="150" cy="296" rx="90" ry="8" fill="url(#g)" opacity=".35" filter="url(#b)"/></svg>
+  </div>
+</section>
+<ul class="domains" aria-label="Challenge domains">
+  <li>Steganography</li><li>Web Security</li><li>Cryptography</li><li>Digital Forensics</li><li>Networking</li><li>OSINT</li>
+</ul>
+<p class="tag">Decode the breach. Reconstruct the identity.</p>
+{% endblock %}
