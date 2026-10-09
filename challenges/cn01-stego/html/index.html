@@ -6,6 +6,7 @@
 <h1>CN-01: Frame of Reference</h1>
 <div class="chips"><span class="chip">Steganography</span><span class="chip">Easy</span></div>
 <p>Investigators recovered a banner image from CeylonGov Secure's public relations archive. Staff say a departed intern used to hide notes inside images. Find out what this one is carrying.</p>
+<section class="card guide"><h2>How to start</h2><p><strong>Goal:</strong> Find the message hidden inside the image.</p><ol><li>Download ceylongov_banner.png from the Evidence section below.</li><li>The picture looks normal on purpose. The message is stored in the pixel data, not in what you see.</li><li>Use Python (pip install pillow) or a steganography library to read the lowest bit of the pixel values.</li><li>The recovered text holds a flag in CipherNest{...} format and tells you where the next stage is. Submit the flag on the dashboard.</li></ol></section>
 <h2>Evidence</h2>
 <div class="card file"><div><b>ceylongov_banner.png</b><small>PNG image</small></div><a class="btn btn-p btn-s" href="/cn01/ceylongov_banner.png" download>Download</a></div>
 <h2>Hints</h2>
@@ -14,3 +15,4 @@
 <details class="hint"><summary>Hint 3</summary><p>The least significant bits of the pixel data are not random.</p></details>
 <p class="note">Found the flag? Submit it on the <a href="/dashboard">dashboard</a>.</p>
 </main></body></html>
+

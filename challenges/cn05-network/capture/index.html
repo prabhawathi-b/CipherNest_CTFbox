@@ -6,6 +6,7 @@
 <h1>CN-05: Whispers on the Wire</h1>
 <div class="chips"><span class="chip">Networking</span><span class="chip">Moderate-Hard</span></div>
 <p>The host found in CN-04 sits in CeylonGov Secure's internal service segment. Investigators have a packet capture from that segment. Recover the intruder's credentials from it, then use them against the live service on the staging host.</p>
+<section class="card guide"><h2>How to start</h2><p><strong>Goal:</strong> Recover the intruder login from the capture, then use it on the live FTP service.</p><ol><li>Download evidence_capture.pcap and open it in Wireshark.</li><li>Filter on ftp and follow the TCP stream to find the username and password.</li><li>The FTP service runs on the same machine as this site, on port 2221. Connect with an FTP client, or in PowerShell run: curl.exe ftp://USERNAME:PASSWORD@localhost:2221/</li><li>Download flag.txt from the server. It holds the flag and points you to CN-06.</li></ol></section>
 <h2>Evidence</h2>
 <div class="card file"><div><b>evidence_capture.pcap</b><small>Packet capture, open in Wireshark</small></div><a class="btn btn-p btn-s" href="/cn05-capture/evidence_capture.pcap" download>Download</a></div>
 <h2>Hints</h2>
@@ -14,3 +15,4 @@
 <details class="hint"><summary>Hint 3</summary><p>Filter on ftp before you start scrolling through the capture.</p></details>
 <p class="note">Found the flag? Submit it on the <a href="/dashboard">dashboard</a>. The file you retrieve points to CN-06.</p>
 </main></body></html>
+

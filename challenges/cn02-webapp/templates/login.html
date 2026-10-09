@@ -13,4 +13,10 @@
 </form>
 <p class="alt"><a href="/dashboard">Back to CipherNest dashboard</a></p>
 </div></div>
+<section class="card guide"><h2>How to start</h2><p><strong>Goal:</strong> get into this legacy portal without a valid login. You are not given a username or password.</p><ol><li>Study the login form and see how it reacts to unusual input.</li><li>The form passes what you type straight into a database query. Look up SQL injection (OWASP) and try the simplest authentication bypass.</li><li>Once you are in, read the maintenance notes. They hold the flag and the clue for CN-03.</li></ol></section>
+<h2>Hints</h2>
+<details class="hint"><summary>Hint 1</summary><p>The login form trusts what you type more than it should.</p></details>
+<details class="hint"><summary>Hint 2</summary><p>Try breaking out of the SQL query with a single quote.</p></details>
+<details class="hint"><summary>Hint 3</summary><p>A classic OR condition in the username field will get you further than a password guess.</p></details>
 </main></body></html>
+

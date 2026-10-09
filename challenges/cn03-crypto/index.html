@@ -6,6 +6,7 @@
 <h1>CN-03: Weak Locks</h1>
 <div class="chips"><span class="chip">Cryptography</span><span class="chip">Moderate</span></div>
 <p>The maintenance note from CN-02 held an encoded configuration string. CeylonGov Secure's legacy tooling protected it with a weak, layered scheme. Recover the plaintext to get this stage's flag and the credentials for the evidence archive.</p>
+<section class="card guide"><h2>How to start</h2><p><strong>Goal:</strong> Decode the string in challenge.txt to get the flag and the CN-04 login.</p><ol><li>Download challenge.txt and copy the encoded string.</li><li>The first layer is an encoding, the second is a classic cipher that needs a keyword. The keyword was in the CN-02 maintenance notes.</li><li>Use CyberChef (From Base64, then Vigenere Decode) or write a short Python script.</li><li>The result contains the flag and a username and password. Keep the username and password for CN-04.</li></ol></section>
 <h2>Evidence</h2>
 <div class="card file"><div><b>challenge.txt</b><small>Text file with the encoded string</small></div><a class="btn btn-p btn-s" href="/cn03/challenge.txt" download>Download</a></div>
 <h2>Hints</h2>
@@ -14,3 +15,4 @@
 <details class="hint"><summary>Hint 3</summary><p>The key was hiding in plain sight in the CN-02 maintenance notes.</p></details>
 <p class="note">Found the flag? Submit it on the <a href="/dashboard">dashboard</a>. Keep the credentials for CN-04.</p>
 </main></body></html>
+

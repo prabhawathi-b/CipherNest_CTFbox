@@ -17,6 +17,7 @@
       </div>
       <div class="ring" style="--p:{{ pct }}" role="img" aria-label="{{ done|length }} of 6 challenges solved"><b>{{ done|length }}/6</b></div>
     </section>
+    <section class="card how"><h2>How this works</h2><ol><li>Open a challenge and read its How to start card.</li><li>Recover the flag. It looks like CipherNest{...}.</li><li>Paste it into that stage box here and press Submit flag.</li><li>Clues from each stage lead to the next, so play them in order.</li></ol></section>
     <section class="grid" id="challenges" aria-label="Challenges">
       {% for s in stages %}
       {% set st = 'solved' if s.id in done else ('next' if s.id == nxt else 'open') %}
@@ -53,3 +54,4 @@ document.querySelectorAll('.flag-form').forEach(f=>f.addEventListener('submit',a
 }));
 </script>
 {% endblock %}
+
