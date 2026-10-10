@@ -71,8 +71,8 @@ services:
     container_name: ciphernest-cn05-target
     restart: unless-stopped
     ports:
-      - "2221:21"
-      - "2121-2130:2121-2130"
+      - "127.0.0.1:2221:21"
+      - "127.0.0.1:2121-2130:2121-2130"
     networks:
       - ctf-challnet
       - ctf-frontnet
