@@ -1,0 +1,9 @@
+10.0.5.12 - - [14/Sep/2026:02:11:03 +0000] "GET /portal/login HTTP/1.1" 200 1532
+10.0.5.12 - - [14/Sep/2026:02:11:09 +0000] "POST /portal/login HTTP/1.1" 302 211
+10.0.5.12 - - [14/Sep/2026:02:11:15 +0000] "GET /portal/maintenance HTTP/1.1" 200 980
+192.168.77.41 - - [14/Sep/2026:02:14:47 +0000] "GET /staging/config HTTP/1.1" 200 410
+192.168.77.41 - - [14/Sep/2026:02:14:52 +0000] "GET /staging/config HTTP/1.1" 200 410
+192.168.77.41 - - [14/Sep/2026:02:14:58 +0000] "GET /staging/backup.tar HTTP/1.1" 200 88211
+192.168.77.41 - - [14/Sep/2026:02:15:03 +0000] "GET /staging/backup.tar HTTP/1.1" 200 88211
+192.168.77.41 - - [14/Sep/2026:02:15:09 +0000] "GET /staging/backup.tar HTTP/1.1" 200 88211
+10.0.5.9 - - [14/Sep/2026:03:02:11 +0000] "GET /portal/health HTTP/1.1" 200 15

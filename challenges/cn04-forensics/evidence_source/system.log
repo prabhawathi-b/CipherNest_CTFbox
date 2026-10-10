@@ -1,0 +1,5 @@
+Sep 14 02:14:45 staging-01 kernel: new connection established from 192.168.77.41
+Sep 14 02:14:46 staging-01 sshd: Accepted keyboard-interactive for svc-backup from 192.168.77.41
+Sep 14 02:15:12 staging-01 cron: outbound sync job started, target=10.20.30.40
+Sep 14 02:15:40 staging-01 cron: outbound sync job completed, 3 files transferred
+Sep 14 02:20:01 staging-01 systemd: session closed for svc-backup
